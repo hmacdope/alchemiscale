@@ -53,6 +53,7 @@ def api_starting_params(envvar_host, envvar_port, envvar_loglevel):
             type=str,
             help="IP address of host",
             envvar=envvar_host,
+            required=True,
             **SETTINGS_OPTION_KWARGS,
         )
         port = click.option(
@@ -60,6 +61,7 @@ def api_starting_params(envvar_host, envvar_port, envvar_loglevel):
             type=int,
             help="port",
             envvar=envvar_port,
+            required=True,
             **SETTINGS_OPTION_KWARGS,
         )
         loglevel = click.option(
@@ -81,6 +83,7 @@ def db_params(func):
         help="database URI",
         type=str,
         envvar="NEO4J_URL",
+        required=True,
         **SETTINGS_OPTION_KWARGS,
     )
     user = click.option(
@@ -88,6 +91,7 @@ def db_params(func):
         help="database user name",
         type=str,
         envvar="NEO4J_USER",
+        required=True,
         **SETTINGS_OPTION_KWARGS,
     )
     password = click.option(
@@ -95,6 +99,7 @@ def db_params(func):
         help="database password",
         type=str,
         envvar="NEO4J_PASS",
+        required=True,
         **SETTINGS_OPTION_KWARGS,
     )
     dbname = click.option(
